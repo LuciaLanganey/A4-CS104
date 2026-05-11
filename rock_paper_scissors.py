@@ -11,18 +11,21 @@ print(
 
 # game
 choices = ["rock", "paper", "scissors"]
-player = input("Your turn (rock, paper, or scissors): ")
-computer = random.choice(choices)
 
-print("Computer chose:", computer)
+while True:
+    player = input("Your turn (rock, paper, or scissors): ")
+    computer = random.choice(choices)
 
-if player == computer:
-    print("Tie!")
-elif (
-    (player == "rock" and computer == "scissors")
-    or (player == "scissors" and computer == "paper")
-    or (player == "paper" and computer == "rock")
-):
-    print("You win!")
-else:
-    print("Computer wins!")
+    print("Computer chose:", computer)
+    if player == computer:
+        print("Tie! Rematch.\n")
+        continue
+    if (
+        (player == "rock" and computer == "scissors")
+        or (player == "scissors" and computer == "paper")
+        or (player == "paper" and computer == "rock")
+    ):
+        print("You win!")
+    else:
+        print("Computer wins!")
+    break
